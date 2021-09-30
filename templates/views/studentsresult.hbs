@@ -1,0 +1,42 @@
+<!DOCTYPE>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  </head>
+<body>
+  {{#each users}}
+
+      <input type="hidden" name="id" value="{{id}}">
+    <div>
+
+  
+    <table  border="1px"  >
+        <tr>
+          <th>Subject</th>
+          <th>Marks</th>
+        </tr>
+        <tr>
+          <td> PHYSICS </td>
+          <td>  <input type="number" name="physics" value={{physics}}> /100 </td>
+        </tr>
+        <tr>
+          <td>CHEMISTRY</td>
+          <td>  <input type="number" name="chemistry" value="{{chemistry}}"> /100 </td>
+        </tr>
+        <tr>
+            <td>MATHS</td>
+            <td> <input type="number" name="maths" value="{{maths}}"> /100</td>
+        </tr>
+        <tr>
+            <td>Percentage</td>
+            <td> <input type="number" name="percentage" value="{{percentage}}"></td>
+        </tr>
+    </table>
+
+  {{/each}}
+</body>
+</html>

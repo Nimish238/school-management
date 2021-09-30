@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+    <title>Teacher register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="register.css">
+  </head>
+  <body>
+    <div>
+    <div class="style">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color:white;"><i class="fas fa-school"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav" >
+          <a class="nav-link active" aria-current="page" href="/" style="color:white;">Home</a>
+          <a  class="nav-link active" href='/teacherstudent' style="color:white;">Signin</a>
+            <a  class="nav-link active" href='#' style="color:white;">About Us</a>
+              <a  class="nav-link active" href='#' style="color:white;">Contact Us</a>
+                <a  class="nav-link active" href='#' style="color:white;">Admissions</a>
+                  <a  class="nav-link active" href='#' style="color:white;">News</a>
+                  <a class="nav-link active" aria-current="page" href="#" onclick="document.getElementById('id01').style.display='block'"  style="color:white;" style="width:auto;">Ranking's</a>
+        </div>
+      </div>
+    </div>
+    </nav>
+    <br>
+  </div>
+    <br>
+
+      <div id="id01" class="modal">
+      <table border="2px " >
+      		<thead>
+      			<tr>
+      				<th>Year</th>
+      				<th> NIRF Ranking's</th>
+      				<th>Shiksha</th>
+      				<th>Collegedunia</th>
+      				<th>Timeshighereducation</th>
+      			</tr>
+      		</thead>
+      		<tbody>
+      			<tr>
+      				<td>2016</td>
+            	<td>20</td>
+      				<td>15</td>
+      				<td>28</td>
+      				<td>25</td>
+      			</tr>
+      			<tr>
+      				<td>2017</td>
+              <td>18</td>
+      				<td>15</td>
+      			  <td>24</td>
+      				<td>23</td>
+      			</tr>
+      			<tr>
+      				<td>2018</td>
+      	      <td>20</td>
+      			  <td>18</td>
+      			 	<td>22</td>
+      				<td>20</td>
+      			</tr>
+      			<tr>
+      				<td>2019</td>
+             	<td>16</td>
+      				<td>18</td>
+      				<td>26</td>
+      				<td>21</td>
+      			</tr>
+      			<tr>
+      				<td>2020</td>
+      	      <td>26</td>
+      				<td>16</td>
+      				<td>25</td>
+      				<td>24</td>
+      			</tr>
+      		</tbody>
+        		</table>
+      		</div>
+
+<div class="register">
+<h1> Teachers register </h1><hr>
+<form action="/register"   autocomplete="off"  method="POST" enctype="multipart/form-data">
+<div>
+<label>FIRST NAME:</label><br>
+<input type="text" name="firstname"  id="fname" ><br>
+
+</div>
+<br>
+<div>
+<label>LAST NAME:</label><br>
+<input type="text" name="lastname" id="lname" ><br>
+
+</div>
+<br>
+<div>
+<label>EMAIL:</label><br>
+<input type="email" name="email"  id="email">
+
+</div>
+<br>
+<div>
+<label>PHONE NUMBER:</label><br>
+<input type="number" name="phone" id="Phone">
+
+</div>
+<br>
+<div>
+<label>Gender:</label><br>
+<input type="radio" name="gender"  id="Male" value="male" /> Male
+<input type="radio" name="gender"  id="Female" value="female"/> Female
+<input type="radio" name="gender"   id="Other" value="other"/> Other
+
+</div>
+<br>
+
+<div>
+<label>AGE:</label><br>
+<input type="number"  id="age" name="age">
+</div>
+<br>
+<label>enter dob:</label><br>
+<input name="dob"   type="date" >
+<br><br>
+<div>
+<label>PASSWORD:</label><br>
+<input type="text" name="password"  id="Password" >
+
+</div>
+<br>
+<div>
+<label>Confirm password:</label><br>
+<input type="text" name="confirmpassword" id="Confirm Password">
+
+</div>
+<br>
+<div>
+<label>Upload Image:</label><br>
+<input type="file" name='image' id='image' width="300px"  height="300px">
+</div>
+<br><br>
+<div>
+<input type="submit" value="submit"></input>
+</div>
+<br>
+<p>&nbsp;Do have an account?  <a href="/login"> click here.</a></p>
+</form>
+</div>
+  </body>
+  <script>
+
+  // Get the modal
+  var modal = document.getElementById('id01');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+
+  </script>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update student</title>
+
+      <!-- <link rel="stylesheet" href="details.css"> -->
+    <style media="screen">
+      #details{
+        border: 1px solid black;
+        /* text-align: center; */
+          margin:3% 28% 3% 30%;
+          padding-left: 3%;
+
+      }
+
+      .update{
+          border: 1px solid black;
+          /* text-align: center; */
+            margin:3% 28% 5% 30%;
+      }
+      h1{
+        text-align: center;
+        text-decoration: underline;
+      }
+    input[type=text] ,input[type=number]{
+        width:60%;
+        padding: 8px 20px;
+        margin: 7px 15px;
+        border-radius: 5px;
+      }
+      label,input[type=submit]{
+        margin:7px 15px;
+
+      }
+    </style>
+</head>
+<body>
+
+  {{#each user}}
+
+    <div id="details">
+      <h1>Students profile</h1>
+    <p>  <span style="font-weight:bold">firstname: &nbsp;</span>{{firstname}} </p>
+      <p> <span style="font-weight:bold">lastname :&nbsp;</span> {{lastname}} </p>
+      <p> <span style="font-weight:bold">email: &nbsp;</span>{{email}}</p>
+      <p> <span style="font-weight:bold">age :&nbsp;</span> {{age}}</p>
+      <p> <span style="font-weight:bold">phone no.: &nbsp;</span>{{phone}} </p>
+      <p> <span style="font-weight:bold">rollno.: &nbsp;</span> {{rollno}}</p>
+    </div>
+<br><br>
+<div class="update">
+    <h1>Update profile</h1>
+    <form action="/update/{{_id}}" method="POST">
+      <!-- <input type="hidden" name="id" value="{{id}}"> -->
+    <div>
+    <label>FIRST NAME:</label><br>
+    <input type="text" name="firstname" value="{{firstname}}">
+    </div>
+    <br>
+    <div>
+    <label>LAST NAME:</label><br>
+    <input type="text" name="lastname" value="{{lastname}}">
+    </div>
+    <br>
+    <div>
+    <label>EMAIL:</label><br>
+    <input type="text" name="email" value="{{email}}">
+    </div>
+    <br>
+    <div>
+    <label>PHONE NUMBER:</label><br>
+    <input type="number" name="phone" value="{{phone}}">
+    </div>
+    <br><br>
+    <div>
+    <label>AGE:</label><br>
+    <input type="number" name="age" value="{{age}}">
+    </div>
+    <br>
+    <!-- <label>enter dob</label>
+    <input name="dob" type="date" value="{{dob}}">
+    <br> -->
+    <label>enter roll no</label><br>
+    <input name="rollno" type="text" value="{{rollno}}">
+    <br>
+    <div>
+
+    <br>
+    <input type="submit" value="update"></input>
+    </form>
+  </div>
+{{/each}}
+
+</body>
+</html>

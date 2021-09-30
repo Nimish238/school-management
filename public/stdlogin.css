@@ -1,0 +1,47 @@
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  padding-top: 70px;
+  padding-left: 30%;
+  /* color: white; */
+}
+th:hover{
+	background-color: Tomato;
+}
+td:hover{
+	background-color: MediumSeaGreen;
+}
+th,td{
+  color: white;
+  border: 1px solid white;
+}
+table{
+  border: 1px solid ;
+}
+input[type=email], input[type=password] {
+  width:100%;
+  padding: 12px 20px;
+  margin: 4px 0;
+}
+input[type=submit]{
+  background-color:black;
+  color:white;
+  padding:5px 10px;
+  border:none;
+}
+.btn{
+  border:1px solid black;
+  margin-left: 30%;
+  margin-top: 7%;
+  margin-right: 30%;
+  text-align: left;
+}

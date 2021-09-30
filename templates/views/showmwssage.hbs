@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+    #ctn{
+      border: 1px solid black;
+      border-radius: 5px;
+        margin-left: 35%;
+        margin-top: 10%;
+        margin-right: 35%;
+        text-align: center;
+        overflow:auto;
+        background-color: white;
+        padding-bottom: 1%;
+      }
+      span{
+        font-weight:bold;
+      }
+      p{
+        font-size: 25px;
+      }
+    </style>
+</head>
+<body>
+{{#each users}}
+   <div id="ctn">
+     <p style="text-transform: uppercase;"><span>Name:&nbsp;</span>{{name }}  </p>
+    <p><span>Date&time:&nbsp;</span>{{date}}</p>
+    <p><span>id:&nbsp;</span>{{id}}</p>
+   <p><span>Message:&nbsp;</span>{{ message }}</p><br>
+   <a href="/messagedelete/{{_id}}" class="delete"><button >Delete</button></a>
+   <br>
+</div>
+{{/each}}
+</body>
+</html>

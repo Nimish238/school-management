@@ -1,0 +1,61 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale:1.0">
+  <title></title>
+<style>
+body{
+  background-color: #CDCDCD;
+}
+#ctn{
+  border: 1px solid black;
+  border-radius: 5px;
+    margin-left: 35%;
+    margin-top: 10%;
+    margin-right: 35%;
+    text-align: center;
+    overflow:auto;
+    background-color: white;
+  }
+div{
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+textarea{
+  width: 40%;
+  height: 10%;
+}
+</style>
+</head>
+<body>
+<div id="ctn">
+    <form action="message" method="post">
+      <div >
+        <label><span style="font-weight:bold">Name:</span> &nbsp; {{users.firstname}} &nbsp;{{users.lastname}}</label>
+        <input type="hidden" name="name" value="{{users.firstname}} &nbsp;{{users.lastname}}"></input>
+      </div>
+      <div>
+        <label><span style="font-weight:bold">Date&time: &nbsp;</label>
+        	<input type="hidden" name="date" id="dateinp">
+           <span id="dt" ></span>
+      </div>
+      <div>
+        <label><span style="font-weight:bold">Message:</label><br>
+        <textarea name="message" placeholder="write message"></textarea>
+      </div>
+      <div>
+        <input type="submit" value="submit"></input>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+  var d=new Date();
+var date=d.toLocaleString();
+document.getElementById('dateinp').value=date;
+document.getElementById('dt').innerHTML=date;
+
+
+</script>
+</html>

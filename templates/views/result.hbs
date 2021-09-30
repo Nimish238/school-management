@@ -1,0 +1,99 @@
+<!DOCTYPE>
+<html>
+<head>
+  {{#each users}}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter marks of {{firstname}} {{lastname}}</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+.panel{
+  display: none;
+  width: 40%;
+	height: 200px;
+}
+
+  </style>
+</head>
+<body>
+  <form action="/result/{{_id}}" method="post" onsubmit="return validate()">
+    <div align="center" >
+    <h2>Students Name:{{firstname}} {{lastname}} </h2>
+    <h3 style="color: red">Students Id:{{id}} </h3>
+    <table  border="1px"   width="50%" height="200px">
+
+        <tr>
+				<th>PHYSICS</th>
+				<th>CHEMISTRY</th>
+				<th>MATHEMATICS</th>
+			</tr>
+			<tr>
+				<td><input type="number" name="physics" id="1">  /100</td>
+				<td><input type="number" name="chemistry" id="2">  /100</td>
+				<td><input type="number" name="maths" id="3">  /100</td>
+			</tr>
+    </table>
+
+<div class="panel">
+  <h3>marks in physics:<span id="phy" style="color:red"></span></h3>
+  <h3>marks in chemistry:<span id="che" style="color:red"></span></h3>
+  <h3>marks in Maths:<span id="mat" style="color:red"></span></h3>
+  <h3>percentage:<span id="per" style="color:green"></span></h3>
+
+  <br><br>
+  <input type="submit" name="submit" value="submit"></input>
+  <br>
+
+  <span id="null" style="color:red;font-size: 20px;"></span><br>
+  <span id="nve" style="color:red;font-size: 20px;"></span><br>
+  <span id="full" style="color:red;font-size: 20px;"></span><br>
+</div>
+</div>
+<input type="hidden" name="firstname" value={{firstname}}><input type="hidden" name="lastname" value={{lastname}}>
+<input type="hidden" name="id" value={{_id}}>
+<input type="hidden" name="percentage" id="pers">
+</form>
+{{/each}}
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#3").keyup(function(){
+    $(".panel").slideDown(1500);
+  });
+});
+var a=document.getElementById('3');
+a.addEventListener("keyup",function(){
+  var p=document.getElementById("1").value;
+  var c=document.getElementById("2").value;
+  var m=document.getElementById("3").value;
+  document.getElementById('phy').innerHTML=p;
+  document.getElementById('che').innerHTML=c;
+  document.getElementById('mat').innerHTML=m;
+
+  var pr=(Number(p)+Number(c)+Number(m))*100/300;
+  document.getElementById('per').innerHTML=pr.toFixed(2);
+  document.getElementById('pers').value=pr.toFixed(2);
+});
+
+ function validate(){
+   var p=document.getElementById("1").value;
+   var c=document.getElementById("2").value;
+   var m=document.getElementById("3").value;
+
+  if(p==""||c==""||m==""){
+    document.getElementById('null').innerHTML="**fields cannot be empty";
+    return false;
+  }
+  if(p<0||c<0||m<0){
+    document.getElementById('nve').innerHTML="**fields cannot be less than zero";
+    return false;
+  }
+  if(p>100||c>100||m>100){
+    document.getElementById('full').innerHTML="**fields cannot be greater than 100";
+    return false;
+  }
+ }
+
+</script>
+</html>
